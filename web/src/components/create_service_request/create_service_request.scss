@@ -1,0 +1,63 @@
+.intensive .el-form-item__label{
+  color:red;
+}
+.notesUpload{
+  display:flex;
+}
+.upload-demo{
+  display: flex;
+  .el-upload{
+    width:250px;
+    height:100px;
+    .el-upload__input{
+      width:250px;
+      padding-left:25px;
+      margin-top:5px;
+    }
+    .el-upload-dragger{
+      width:250px;
+      height:70px;
+      .el-icon-upload{
+        margin:0;
+        font-size:50px;
+      }
+    }
+  }
+  
+}
+.el-form{
+  width:1500px;
+  background-color:#fff;
+  padding: 10px;
+  margin:10px;
+
+}
+.summary{
+  width: 400px;
+}
+.notes .el-input__inner{
+  width:300px;
+  height:100px;
+}
+.el-form--inline .el-form-item__label{
+  text-align:left;
+  width:145px;
+}
+.el-select{
+  width:192px;
+}
+.address{
+  width: 400px;
+}
+.cusinformation{
+  margin-top:10px;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 30px;
+}
+.cust{
+  flex:1;
+  height:100%;
+  overflow: auto;
+  background-color: #eee;
+}

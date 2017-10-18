@@ -1,0 +1,52 @@
+.home{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .logo{
+    	margin-left:2%;
+    }
+    .footer{
+    	position: absolute;
+	    bottom: 0px;
+	    width: 100%;
+	    height: 30px;
+	    line-height: 30px;
+	    background: rgba(0,0,0,.5);
+	    color: #919191;
+	    font-size: 12px;
+	    p{
+	    	margin-left:10px;
+	    	float:left;
+	    }
+	    .right{
+	    	margin-right:10px;
+	    	float:right;
+	    	position: relative;
+		    display: inline-block;
+		    vertical-align: middle;
+		    .dropdown-menu{
+		    	position:absolute;
+		    	padding-top: 10px;
+			    top: -72px;
+			    border-radius: 0px;
+			    left: -80px;
+			    border: 0;
+			    padding: 0;
+			    margin: 0;
+			    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    			background-clip: padding-box;
+		    }
+	    }
+    }
+    .discription{
+    	margin-top:50px;
+    	margin-left:2%;
+    }
+    .login-form{
+    	position: absolute;
+	    top: 50%;
+	    right: 5%;
+	    margin-top: -200px;
+    }
+}
