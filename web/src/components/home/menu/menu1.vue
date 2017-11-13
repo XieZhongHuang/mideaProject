@@ -24,7 +24,7 @@
 		height:100%;
 		border-right: 2px solid #ccc;
 		overflow: auto;
-		cursor:e-resize;
+		/*cursor:e-resize;*/
 	}
 	.el-tree{
 		text-align: left;
@@ -33,7 +33,7 @@
 	}
 </style>
 <script>
-	 import router from '../../router/'
+	 import router from '../../../router/'
 	 export default {
 	    watch: {
 	      filterText(val) {
@@ -41,7 +41,6 @@
 	        this.$refs.tree2.filter(val);
 	      }
 	    },
-
 	    methods: {
 	      filterNode(value, data) {
 	        if (!value) return true;

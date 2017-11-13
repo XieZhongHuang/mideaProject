@@ -2,7 +2,7 @@
 	<div class="top">
 		<div class="logo"><img src="src/assets/img/logo.png" alt=""></div>
 		<div class="serch">
-			<el-select v-model="value" filterable placeholder="Customer Name">
+			<el-select v-model="select" filterable placeholder="Customer Name">
 			    <el-option
 			      v-for="item in options"
 			      :key="item.value"
@@ -18,12 +18,11 @@
 			</el-input>
 		</div>
 		<ul class="topright">
-	    	<li><i class="el-icon-information"></i></li>
+	    	<li><i class="el-icon-fa-bell-o"></i></li>
 	    	<li class="lb">
-	    		<span>English</span><i class="el-icon-caret-bottom"></i>
+	    		<span>{{this.$store.state.header.lang}}</span><i class="el-icon-caret-bottom"></i>
 	    		<ul class="fork">
-	    			<li>English</li>
-	    			<li>Chinese</li>
+	    			<li v-for='(value,index) in languages' @click='changelang(value)' :key="index">{{value}}</li>
 	    		</ul>
 	    	</li>
 	    	<li class="lb">
@@ -37,9 +36,9 @@
 	    	<li class="lbr">
 	    		<span>EX_FITBDG</span><i class="el-icon-caret-bottom"></i>
 	    		<ul class="fork">
-	    			<li><i class="icon-key"></i>Reset Password</li>
-	    			<li>Logout</li>
-	    			<li>Contact US</li>
+	    			<li><i class="el-icon-fa-key"></i>Reset Password</li>
+	    			<li><i class="el-icon-fa-share"></i>Logout</li>
+	    			<li><i class="el-icon-fa-phone"></i>Contact US</li>
 	    		</ul>
 	    	</li>
 	    	<li>
@@ -64,6 +63,7 @@ export default{
       return {
         activeIndex: '1',
         activeIndex2: '1',
+        languages:['English','Bahasa'],
         input:'',
         imageUrl:'./src/assets/img/profile-widget-avatar.jpg',
         options: [{
@@ -76,7 +76,7 @@ export default{
           value: '选项3',
           label: 'Serial Number'
         }],
-        value: ''
+        select: ''
       };
     },
     methods: {
@@ -92,7 +92,6 @@ export default{
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
         const isLt2M = file.size / 1024 / 1024 < 2;
-
         if (!isJPG) {
           this.$message.error('上传头像图片只能是 JPG 格式!');
         }
@@ -100,12 +99,17 @@ export default{
           this.$message.error('上传头像图片大小不能超过 2MB!');
         }
         return isJPG && isLt2M;
+      },
+      changelang(value){
+      	this.$store.dispatch('changLang',value);
       }
-    }
+	}
 }
 $(function(){
+	console.log($('.topright')[0]);
 	var res = true;
 	$('.topright').on('click','.lb',function(){
+		console.log(666);
 		if(res == true){
 			$(this).find('.fork')[0].style.display='block';
 			res = false;

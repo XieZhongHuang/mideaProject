@@ -1,0 +1,195 @@
+.detial{
+	width:100%;
+	flex:1;
+	height:100%;
+	overflow: auto;
+	background-color: #eee;
+	padding:20px;
+	position:relative;
+	.back{
+		position:absolute;
+		right:20px;
+	}
+	.fromse{
+		margin-top:40px;
+		background-color:#fff;
+		padding:10px;
+		
+		.intens{
+			.el-form-item__label{
+				color:red;
+			}
+		}
+		.adres{
+			.el-form-item__content{
+			
+			}
+		}
+		.phone{
+			.el-form-item__content{
+				width:40px;
+			}
+		}
+		.phoneNum{
+			.el-form-item__content{
+				width:90px;
+			}
+		}
+	}
+	.tabs{
+		background-color:#fff;
+		.el-tabs__header{
+			background-color: #13ce66;
+			.el-tabs__item.is-active{
+				color:#fff;
+			}
+			.el-tabs__active-bar{
+				background-color: #e2ff20;
+			}
+			.el-tabs__item{
+				color: #000;
+    			font-weight: bold;
+			}
+		}
+		.table{
+			margin-bottom:40px;
+			position:relative;
+			.el-table td, .el-table th.is-leaf{
+				text-align:center;
+			}
+			.block{
+				position:absolute;
+				right:20px;
+				bottom:-30px;
+			}
+		}
+	}
+	.intensive .el-form-item__label{
+	  color:red;
+	}
+	.notesUpload{
+	  display:flex;
+	}
+	.shelf{
+	  display: flex;
+	  .el-upload{
+	    width:250px;
+	    height:100px;
+	    .el-upload__input{
+	      width:250px;
+	      padding-left:25px;
+	      margin-top:5px;
+	      display:none;
+	    }
+	    .el-upload-dragger{
+	      border:none;
+	      width:250px;
+	      height:100px;
+	      .el-icon-upload{
+	        margin:0;
+	        font-size:50px;
+	      }
+	    }
+	  }
+	  
+	}
+	.btnload{
+	  display:flex;
+	  margin:30px 0 0 30px;
+	  .el-upload__input{
+	      display:none;
+	    }
+	}
+	.fms{
+	  background-color:#fff;
+	  margin:10px 0;
+	  .dialogCust{
+	    .el-dialog__header{
+	      display:none;
+	    }
+	    .el-dialog__body{
+	      font-size:20px;
+	      padding:20px;
+	    }
+	    .check{
+	      margin-right:10px;
+	      width:30px;
+	      height:20px;
+	      light-height:40px;
+	      background-color:green;
+	      color:#fff;
+	      border-radius:50%;
+	    }
+	  }
+	  .dialogSR{
+	    .el-dialog__header{
+	      margin: 20px 20px 0;
+	      border-bottom: 1px solid #ccc;
+	      padding-bottom:10px;
+	      display:block;
+	      .el-dialog__title{
+	        font-size:30px;
+	      }
+	    }
+	    .el-dialog__body{
+	      font-size:20px;
+	      padding:20px;
+	    }
+	  }
+	  .el-form-item{
+	    margin-left:10px;
+	  }
+	  .el-select{
+	    .el-input__inner{
+	      width:100%;
+	    }
+	  }
+	}
+	.summary{
+	  width: 500px;
+	  .el-input__inner{
+	    width:500px;
+	  }
+	}
+	.notes .el-input__inner{
+	  width:400px;
+	  height:100px;
+	}
+	.el-form--inline .el-form-item__label{
+	  text-align:left;
+	  width:145px;
+	}
+	.el-select{
+	  width:192px;
+	}
+	.address{
+	  width: 500px;
+	  .el-input__inner{
+	    width:500px;
+	  }
+	}
+	.cusinformation{
+	  position:relative;
+	  margin:10px 0;
+	  text-align: left;
+	  padding-left: 10px;
+	  line-height: 45px;
+	  background-color:#eee;
+	  .btn{
+	    margin:0 0 0 50px;
+	    padding:0 10px;
+	    background-color: #ffd;
+	    z-index: 100;
+	    .el-input,.el-input__inner{
+	      width:190px;
+	    }
+	    .el-button--primary.is-plain{
+	      background-color:#20a0ff;
+	      color:#fff;
+	    }
+	    .el-form-item__content{
+	      float:right;
+	    }
+	  }
+	}
+}

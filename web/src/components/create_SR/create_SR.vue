@@ -1,6 +1,6 @@
 <template>
   <div class="cust" v-loading.body="loading">
-      <el-form :inline="true" :rules="rules" :model="ruleForm" ref="ruleForm" class="demo-form-inline form">
+      <!-- <el-form :inline="true" :rules="rules" :model="ruleForm" ref="ruleForm" class="demo-form-inline form">
         <h3 class="cusinformation">
           Customer Information
           <el-form-item class="btn" label="search" label-width="70px">
@@ -65,9 +65,9 @@
         <el-form-item label="Address" class="intensive">
           <el-input v-model="ruleForm.address" class="address"></el-input>
         </el-form-item>
-      </el-form>
+      </el-form> -->
       
-      <el-form :inline="true" :rules="rules" :model="ruleForm" ref="ruleForm" class="demo-form-inline form">
+      <!-- <el-form :inline="true" :rules="rules" :model="ruleForm" ref="ruleForm" class="demo-form-inline form">
         <h3 class="cusinformation">
           Product Infor
           <el-form-item class="btn" label="search" label-width="70px">
@@ -143,7 +143,7 @@
             <el-input v-model="ruleForm.technician"></el-input>
           </el-form-item>
         </div>
-      </el-form>
+      </el-form> -->
 
       <el-form :inline="true" :rules="rules" :model="ruleForm" ref="ruleForm" class="demo-form-inline form">
         <h3 class="cusinformation">
@@ -255,24 +255,14 @@
             action="https://jsonplaceholder.typicode.com/posts/" multiple>
             <el-button type="primary">upload</el-button>
           </el-upload>
-        </div>
+        </div> 
       </el-form>
   </div>
 </template>
 <script>
-  import './create_service_request.scss'
+  import './create_SR.scss'
   export default {
     data() {
-      // var validatePass = (rule, value, callback) => {
-      //   if (value === '') {
-      //     callback(new Error('请输入密码'));
-      //   } else {
-      //     if (this.ruleForm2.checkPass !== '') {
-      //       this.$refs.ruleForm2.validateField('checkPass');
-      //     }
-      //     callback();
-      //   }
-      // };
       return {
         input:'',
         loading:true,

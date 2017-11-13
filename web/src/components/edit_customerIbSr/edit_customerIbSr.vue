@@ -69,7 +69,7 @@
       
       <el-form :inline="true" :rules="rules" :model="ruleForm" ref="ruleForm" class="demo-form-inline form">
         <h3 class="cusinformation">
-          Product Infor
+          Install Base
           <el-form-item class="btn" label="search" label-width="70px">
             <el-input
               placeholder=""
@@ -257,10 +257,80 @@
           </el-upload>
         </div>
       </el-form>
+
+      <h3>Task Information</h3>
+      <el-table
+        ref="multipleTable"
+        :data="tableData"
+        border
+        @cell-click="cellClick"
+        @selection-change="toggleSelection"
+        style="width: 100%">
+        <el-table-column
+          type="selection"
+          resizable
+          align="center">
+        </el-table-column>
+        <el-table-column
+          resizable
+          align="center"
+          type="index">
+        </el-table-column>
+        <el-table-column
+          resizable
+          align="center"
+          prop="date"
+          label="日期">
+        </el-table-column>
+        <el-table-column
+          prop="name"
+          label="姓名"
+          resizable
+          align="center">
+          <template scope="scope">
+            <el-popover trigger="hover" placement="top">
+              <p>姓名: {{ scope.row.name }}</p>
+              <p>住址: {{ scope.row.address }}</p>
+              <div slot="reference" class="name-wrapper">
+                <el-tag size="medium">{{ scope.row.name }}</el-tag>
+              </div>
+            </el-popover>
+          </template>
+        </el-table-column>
+        <el-table-column label="操作" resizable
+          align="center">
+          <template scope="scope">
+            <el-button
+              size="mini"
+              @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+            <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+          </template>
+        </el-table-column>
+        <el-table-column
+          resizable
+          align="center"
+          prop="tag"
+          label="标签"
+          :filters="[{ text: '家', value: '家' }, { text: '公司', value: '公司' }]"
+          :filter-method="filterTag"
+          filter-placement="bottom-end">
+          <template scope="scope">
+            <el-tag
+              :type="scope.row.tag === '家' ? 'primary' : 'success'"
+              close-transition>{{scope.row.tag}}</el-tag>
+          </template>
+        </el-table-column>
+      </el-table>
+      <h3>Charge Line</h3>
+
+      <h3>Quality Assuarance</h3>
   </div>
 </template>
 <script>
-  import './create_service_request.scss'
+  import './edit_customerIbSr.scss'
   export default {
     data() {
       // var validatePass = (rule, value, callback) => {
@@ -276,6 +346,27 @@
       return {
         input:'',
         loading:true,
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄',
+          tag: '家'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄',
+          tag: '公司'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄',
+          tag: '家'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄',
+          tag: '公司'
+        }],
         ruleForm: {
           user: '',
           region: '',
@@ -304,6 +395,42 @@
       }.bind(this),2000);
     },
     methods: {
+      cellClick(row, column, cell, event){
+        // console.log(row);
+        console.log(column);
+        if(column.property === 'date'){
+          console.log(666);
+          var input = document.createElement('input');
+          input.placeholder = row.date;
+          input.value = row.date;
+          console.log(input);
+          console.log(cell);
+          cell.innerHTML = '';
+          cell.appendChild(input);
+          console.log(cell);
+        }
+        // console.log(cell);
+        // console.log(event);
+      },
+      toggleSelection(val) {
+        // if (rows) {
+        //   rows.forEach(row => {
+        //     this.$refs.multipleTable.toggleRowSelection(row);
+        //   });
+        // } else {
+        //   this.$refs.multipleTable.clearSelection();
+        // }
+        console.log(val);
+      },
+      filterTag(value, row) {
+        return row.tag === value;
+      },
+      handleEdit(index, row) {
+        console.log(index, row);
+      },
+      handleDelete(index, row) {
+        console.log(index, row);
+      },
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {

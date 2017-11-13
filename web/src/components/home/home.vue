@@ -8,6 +8,7 @@
 	</div>
 </template>
 <script>
+	import './home.scss'
 	import MenuComponent from './menu/menu1.vue'
  	import headerComponent from './header/header.vue'
 	export default {

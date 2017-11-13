@@ -31,12 +31,16 @@
 		color:white;
 		cursor:pointer;
 		position: relative;
+		text-align:left;
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
 		span{margin-right:5px;}
 		.fork{
 			border:1px solid #eee;
 			display:none;
 			width:100%;
-			background-color:#13ce66;
+			background-color:#eef1f6;
 			position: absolute;
 			top:50px;
 			left: 0;
@@ -48,10 +52,15 @@
 		    	white-space:nowrap;
 		    	overflow:hidden;
 		    	text-overflow:ellipsis;
+		    	color:#999;
+		    	i{
+		    		margin-right:10px;
+		    	}
 		    }
 		    li:last-nth{
 				border-bottom:none;
 			}
+			li:hover{background-color:#3083eb;color:#fff;}
 		}
 	}
 }

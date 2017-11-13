@@ -1,0 +1,33 @@
+.createClaim{
+	width:100%;
+	flex:1;
+	height:100%;
+	overflow: auto;
+	background-color: #eee;
+	.tops{
+		.forms{
+			padding:10px;
+			.row1{
+				display:flex;
+				justify-content:space-between;
+			}
+		}
+	}
+	.bottom{
+		margin:20px 0;
+		padding:0 10px;
+		.header{
+			position:relative;
+			height:50px;
+			.btn{
+				position:absolute;
+				right:20px;
+			}
+		}
+		.content{
+			.el-table td, .el-table th.is-leaf{
+				text-align:center;
+			}
+		}
+	}
+}

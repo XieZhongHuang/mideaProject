@@ -1,0 +1,53 @@
+.partsOnhand{
+	width:100%;
+	flex:1;
+	height:100%;
+	overflow: auto;
+	background-color: #eee;
+	.conditions{
+		position:relative;
+		padding:10px;
+		.condition{
+			display:flex;
+			justify-content:space-around;
+			.el-form-item{
+				margin-bottom:0;
+			}
+		}
+		.elses{
+			overflow:hidden;
+			height:0;
+		}
+		padding:10px 0;
+		border-bottom:1px solid #666;
+		.down,.up{
+			position:absolute;
+			left:50%;
+			top:100%;
+			transform:translate(-50%,0);
+		}
+		.down:hover,.up:hover{
+			cursor:pointer;
+		}
+		.up{display:none;}
+	}
+	.datagrid{
+		padding:0 10px;
+		.btn{
+			display:flex;
+			justify-content:flex-end;
+		}
+		.table{
+			margin-bottom:40px;
+			position:relative;
+			.el-table td, .el-table th.is-leaf{
+				text-align:center;
+			}
+			.block{
+				position:absolute;
+				right:20px;
+				bottom:-30px;
+			}
+		}
+	}
+}

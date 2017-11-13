@@ -260,7 +260,7 @@
   </div>
 </template>
 <script>
-  import './create_service_request.scss'
+  import './create_cust.scss'
   export default {
     data() {
       // var validatePass = (rule, value, callback) => {
